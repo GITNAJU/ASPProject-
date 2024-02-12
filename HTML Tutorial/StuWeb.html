@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUpForm</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="signupData.js">StudentData</script>
+</head>
+<body>
+    <a href="Portfolio.html">Back to Main Portfolio</a>
+    <h1>Sign Up Form</h1>
+    <div>Sign-up Here...!</div><br/>
+    <table>
+        <tr>
+            <td>
+                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off"> <!--- action="action.php" method="post"----->
+                    <div>
+                        <label>Name:</label> <input type="text" id="name" name="name" placeholder="Enter Name"><br/><br/><label class="validation-error hide" id="NameValidationError">This field is required.</label>
+                    </div>
+                    <div>
+                        <label>Email:</label> <input type="text" id="email" name="email" placeholder="Enter Email-id"><br/><br/><label class="validation-error hide" id="EmailValidationError">This field is required.</label>
+                    </div> <br/>
+                    <div>
+                        <label>Password:</label> <input type="password" id="password" name="password" placeholder="Enter Password"><br/><label class="validation-error hide" id="PasswordValidationError">This field is required.</label>
+                    </div>
+                    <br/>
+                <div class="form-action-buttons">
+                    <input type="submit" value="Sign-up">
+                </div>
+                <a href="StudentData.csv" onclick="downloadCSV();">Save and Download Data</a>
+                <script type="text/javascript" src="signupData.js">StudentData</script>
+                </form>
+            </td>
+            <td>
+                <table class="list" id="StudentsDataList">
+                    <thead>
+                        <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script src="script.js"></script>
+    <div id="formDiv">
+    <br>
+        <label for="retrieveKey" >Enter Key to retrieve item</label>
+        <input type="text" id="retrieveKey" placeholder="retrieveKey" required><br>
+        <button id="retrieveButton">Retrieve records</button>
+        <br>
+        <div id="retrieve"></div>
+        <br>
+        <label for="removeKey" >Enter Key to delete item</label>
+        <input type="text" id="removeKey" placeholder="removeKey" required><br>
+        <button id="removeButton">Remove record</button>
+        <br>
+        <button id="clearButton">Clear all records</button>
+        </div>
+</body>
+</html>
